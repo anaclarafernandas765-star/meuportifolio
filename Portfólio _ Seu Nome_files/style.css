@@ -1,0 +1,127 @@
+/* Estilos Globais */
+* {
+    box-sizing: border-box;
+    margin: 20;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #353558;
+    color: #e1e1ff;
+    line-height: 1.6;
+}
+h1, h2, h3 {
+    color: #ffffff;
+}
+
+/* Cabeçalho */
+#header {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #a996ff;
+    
+}
+#header nav a {
+    margin: 0 16px;
+    color: #f3f3f3;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+#header nav a:hover {
+    color: #a996ff;
+}
+
+/* Seções */
+.section {
+    padding: 50px 20px;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    
+}
+
+/* Grid de Habilidades */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+.skill {
+    background-color:#70508d8c;
+    color: #ffff;
+    padding: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.skill:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 10px rgba(170, 144, 255, 0.5);
+}
+
+/* Grid de Projetos */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+.project-card {
+    background-color: #70508d8c;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.project-card:hover {
+    transform: scale(1.05);
+}
+.project-card a {
+    color: #e1e1ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+.project-card a:hover {
+    color: #a996ff;
+}
+
+/* Contato */
+#contato p {
+    font-size: 1.2em;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #1a1a2e;
+    color: #a996ff;
+    font-size: 0.9em;
+}
+img {
+    /* 1. Posicionamento Absoluto */
+    /* Tira a imagem do fluxo normal e permite posicionamento exato */
+    position:relative;
+    /* 2. Alinhamento Vertical (Topo) */
+    /* Coloca a imagem a 20px da borda superior do header */
+    top: -5px; 
+    /* 3. Alinhamento Horizontal (Direita) */
+    /* Coloca a imagem a 20px da borda direita do header */
+    width: 150px; /* Define um tamanho fixo mais adequado para fotos de perfil */
+    height: 150px; /* Mantém a proporção circular/quadrada */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 50%; /* Transforma a imagem em um círculo perfeito */
+    border: 5px solid rgba(112, 80, 141, 0.548); /* Opcional: Adiciona uma borda para destaque */
+}
+.bi-github{
+    
+    color: #ffffff;
+}
+.bi-linkedin{
+    color: #ffffff;
+}
+.links img{
+    width: 100%;
+    border-radius: 0%;
+}

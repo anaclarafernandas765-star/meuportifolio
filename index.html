@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Efeito de Luz no Texto Interativo</title>
+<style>
+    /* Estilos Gerais */
+    body {
+     background-color:#353558 ;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+    }
+
+    /* Container para empilhar e centralizar o texto e o botão */
+    .container {
+        display: flex;
+        flex-direction: column; /* Empilha os itens verticalmente */
+        align-items: center; /* Centraliza os itens horizontalmente */
+        text-align: center;
+    }
+
+    /* Estilo do Título com Efeito Glow */
+    h1 {
+        font-size: 4rem;
+        position: relative;
+        color: #fff;
+        /* Estilos de sombra iniciais (serão controlados pelo JS no mousemove) */
+        text-shadow: 0 0 10px rgb(72, 0, 255),
+                     0 0 20px rgb(144, 0, 255),
+                     0 0 40px rgb(76, 0, 255);
+        transition: text-shadow 0.1s ease;
+        margin-bottom: 30px; /* Espaço maior entre o título e o botão */
+    }
+
+    /* Estilo do Botão */
+    .button {
+        display: inline-block;
+        background-color: transparent; /* Fundo transparente para destacar a borda */
+        color: white;
+        padding: 10px 30px;
+        border-radius: 20px;
+        border: 2px solid white; /* Borda branca para destacar */
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s, transform 0.3s;
+        /* Aplica a animação bounce */
+        animation: bounce 1s infinite;
+    }
+
+    .button:hover {
+        background-color: rgba(255, 255, 255, 0.2); /* Efeito de hover sutil */
+    }
+
+    
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1 id="glowText">Ana Clara Olegário</h1>
+    <a href="pagina.html" class="button"> CLIQUE AQUI</a>
+ 
+</div>
+
+
+<script>
+    const text = document.getElementById("glowText");
+
+    document.addEventListener("mousemove", (e) => {
+        // Calcula a posição do mouse em relação ao centro da tela
+        const x = (e.clientX / window.innerWidth - 0.5) * 2;
+        const y = (e.clientY / window.innerHeight - 0.5) * 2;
+
+        // Ajusta a intensidade e direção da luz
+        const glowColor = "#0ff"; // cor da luz
+        const intensity = 40; // intensidade do brilho
+
+        // Aplica o efeito de luz que segue o mouse
+        text.style.textShadow = `
+            ${x * intensity}px ${y * intensity}px 20px ${glowColor},
+            ${x * intensity * -1}px ${y * intensity * -1}px 40px ${glowColor},
+            0 0 60px ${glowColor},
+            0 0 100px ${glowColor}
+        `;
+    });
+</script>
+
+</body>
+</html>
